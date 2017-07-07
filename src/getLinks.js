@@ -19,19 +19,20 @@ const removeParamsOfUrl = url => {
 const getElsAttr = ($els, attr, $) => {
 	const values = $els.map((i, el) => {
 		const val = $(el).attr(attr);
-		if(!val) {
-			return val;
-		}
-		return removeParamsOfUrl(val)
+		return removeParamsOfUrl(val);
 	}).get();
-	return values.filter(item => item);
+	// 筛选出js、css文件的url
+	return values.filter(url => /\.(css|js)$/.test(url));
 };
+
+const getStyleUrl = ($els, $) => getElsAttr($els, 'href', $);
+const getScriptUrl = ($els, $) => getElsAttr($els, 'src', $);
 
 const findLinks = (content) => {
 	const $ = cheerio.load(content);
 	// 收集页面内的外链资源路径
-	const styles = getElsAttr($('link'), 'href', $);
-	const scripts = getElsAttr($('script'), 'src', $);
+	const styles = getStyleUrl($('link'), $);
+	const scripts = getScriptUrl($('script'), $);
 	return styles.concat(scripts);
 };
 

@@ -17,5 +17,10 @@ const reduceDimension = arr => concat.apply([], arr);
  */
 const dedupe = arr => Array.from(new Set(arr));
 
+exports.addCDNForEnter = (enteies) => {
+    const path = 'http://cms.ptqy.gitv.tv/common/tv/';
+    return enteies.map(entry => path + entry);
+};
+
 exports.reduceDimension = reduceDimension;
 exports.dedupe = dedupe;

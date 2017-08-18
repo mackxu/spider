@@ -9,6 +9,13 @@ const path = require('path');
 
 const distPath = path.join(__dirname, '..', 'dist');
 
+const confirmUrlWithHttp = (url) => {
+    if(url.indexOf('//') === 0) {
+        return `http:${url}`;
+    }
+    return url;
+};
+
 // 根据uri创建dist目录
 const createBuildDir = (uriPath) => {
 	let pathtmp = distPath;
@@ -24,16 +31,16 @@ const createBuildDir = (uriPath) => {
 	})
 };
 
-function createFile(path) {
-
+const createFile = (path) => {
 	// 根据路径创建文件夹
 	createBuildDir(path);
 	return fs.createWriteStream(distPath + path);
 }
 
 /* * url 网络文件地址 * callback 回调函数 */
-function downloadFile(uri, callback) {
+const downloadFile = (uri, callback) =>{
 	console.log(uri);
+	uri = confirmUrlWithHttp(uri);
 	const path = url.parse(uri).path;
 	// 检查文件是否存在
 	if (fs.existsSync(distPath + path)) {

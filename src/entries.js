@@ -27,6 +27,7 @@ module.exports = exports = [
     "user/vipactivemid.html",
     "user/vipxj.html",
     "user/generate-order.html",
+	"user/bindWeChat.html",
 
     "vip/memberpackage.html",
     "vip/memberrights.html",
@@ -38,4 +39,8 @@ module.exports = exports = [
     "vvip/agreement.html",
 
     "account/login.html",
+	"account/coupon.html",
+	
+	"activity/signin.html",
+	"other/tvpay-memberagreement.html"
 ];

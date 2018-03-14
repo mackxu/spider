@@ -35,12 +35,24 @@ module.exports = exports = [
     "vip/vipgift.html",
     "vip/vipgifttext.html",
 
-    "vvip/cashier.html",
     "vvip/agreement.html",
 
     "account/login.html",
 	"account/coupon.html",
-	
+    "account/auto-renew-manage.html",
+    "account/lottery.html",
+    "account/point.html",
+    "account/point-award.html",
+    "account/purchase-record.html",
+    "account/wechat-public.html",
+
+    "m-account/auto-renew-manage.html",
+
+    "m-vip/activation-code.html",
+    "m-vip/autorenew-sendvip.html",
+
 	"activity/signin.html",
-	"other/tvpay-memberagreement.html"
+
+	"other/tvpay-memberagreement.html",
+    "other/point.html",
 ];

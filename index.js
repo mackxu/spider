@@ -1,16 +1,20 @@
 const async = require('async');
+// import eachLimit from 'async/eachLimit';
 
 const getLinks = async.asyncify(require('./src/getLinks'));
 const downloadFile = require('./src/downloadFile');
 const utils = require('./src/utils');
 let entries = require('./src/entries');
 entries = utils.addCDNForEnter(entries);
+entries.sort();
+console.log(`page count: ${entries.length}`);
 
 // 获取线上的所有入口文件
-async.each(entries, downloadFile, err => {
-    if (err) {
-        console.log(err);
-    }
+async.eachLimit(entries, 2, downloadFile, err => {
+  if (err) {
+    console.log('index.js');
+    console.log(err);
+  }
 });
 
 // async.map(entries, getLinks, (err, links) => {

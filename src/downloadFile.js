@@ -37,9 +37,10 @@ const createFile = (path) => {
 	return fs.createWriteStream(distPath + path);
 }
 
+let seed = 1;
+
 /* * url 网络文件地址 * callback 回调函数 */
-const downloadFile = (uri, callback) =>{
-	console.log(uri);
+const downloadFile = (uri, callback) => {
 	uri = confirmUrlWithHttp(uri);
 	const path = url.parse(uri).path;
 	// 检查文件是否存在
@@ -48,7 +49,10 @@ const downloadFile = (uri, callback) =>{
 		return false;
 	}
 	const stream = createFile(path);
-	request(uri).pipe(stream).on('close', callback);
+	request(uri).pipe(stream).on('close', function() {
+		console.log(`${seed++}: ${uri} loaded.`);
+		callback && callback();
+	});
 }
 
 module.exports = exports = downloadFile;

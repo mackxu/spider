@@ -33,7 +33,6 @@ module.exports = exports = [
     "vip/memberrights.html",
     "vip/vipactive.html",
     "vip/vipgift.html",
-    "vip/vipgifttext.html",
 
     "vvip/agreement.html",
 
@@ -54,5 +53,5 @@ module.exports = exports = [
 	"activity/signin.html",
 
 	"other/tvpay-memberagreement.html",
-    "other/point.html",
+    "other/point.html"
 ];

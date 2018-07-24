@@ -18,7 +18,6 @@ module.exports = exports = [
     "user/login.html",
     "user/modifypwd.html",
     "user/profile.html",
-    "user/register.html",
     "user/samsung-renew.html",
     "user/setting.html",
     "user/trial7day.html",
@@ -29,11 +28,14 @@ module.exports = exports = [
     "user/generate-order.html",
 	"user/bindWeChat.html",
 
-    "vip/memberpackage.html",
-    "vip/memberrights.html",
-    "vip/vipactive.html",
+    "vip/activation-code.html",         
+    "vip/autorenew-sendvip.html",         
+    "vip/gold-upgrade.html",         
+    "vip/memberpackage.html",         
+    "vip/memberrights.html",         
+    "vip/newuser-free.html",         
     "vip/vipgift.html",
-
+    "vote/rapvote.html",
     "vvip/agreement.html",
 
     "account/login.html",
@@ -46,12 +48,18 @@ module.exports = exports = [
     "account/wechat-public.html",
 
     "m-account/auto-renew-manage.html",
+    "m-account/point-address.html",         
+    "m-account/welfare-club.html",
 
     "m-vip/activation-code.html",
     "m-vip/autorenew-sendvip.html",
+    "m-vip/newuser-free.html",
 
-	"activity/signin.html",
+    "m-vote/rapvote.html",
 
-	"other/tvpay-memberagreement.html",
-    "other/point.html"
+	"other/gitv-agreement.html",         
+    "other/gold-vip-agreement.html",
+    "other/point.html",         
+    "other/report.html",         
+    "other/tvpay-memberagreement.html",
 ];
